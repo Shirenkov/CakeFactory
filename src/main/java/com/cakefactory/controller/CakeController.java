@@ -1,6 +1,7 @@
-package com.cakefactory;
+package com.cakefactory.controller;
 
 import com.cakefactory.domain.Pastry;
+import com.cakefactory.service.BasketService;
 import com.cakefactory.service.CatalogService;
 import java.util.HashMap;
 import java.util.List;
@@ -17,12 +18,15 @@ import org.springframework.web.servlet.ModelAndView;
 public class CakeController {
 
   private final CatalogService catalogService;
+  private final BasketService basketService;
 
   @GetMapping
   public ModelAndView getCatalog() {
     List<Pastry> pastries = catalogService.findAll();
     Map<String, Object> params = new HashMap<>();
     params.put("pastries", pastries);
+    params.put("numberOfItems", basketService.getNumberOfItems());
+    params.put("isHomePage", true);
     return new ModelAndView("index", params);
   }
 }

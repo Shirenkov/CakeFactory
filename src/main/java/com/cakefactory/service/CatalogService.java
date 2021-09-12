@@ -7,4 +7,6 @@ public interface CatalogService {
 
   List<Pastry> findAll();
 
+  Pastry findById(String id);
+
 }

@@ -4,7 +4,6 @@ import com.cakefactory.domain.Pastry;
 import com.cakefactory.entity.PastryEntity;
 import java.util.List;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 
 @Mapper
 public interface PastryMapper {

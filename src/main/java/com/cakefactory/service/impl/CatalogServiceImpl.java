@@ -21,4 +21,12 @@ public class CatalogServiceImpl implements CatalogService {
     List<PastryEntity> entities = (List<PastryEntity>) pastryRepository.findAll();
     return pastryMapper.map(entities);
   }
+
+  @Override
+  public Pastry findById(String id) {
+    return pastryRepository.findById(id)
+        .map(pastryMapper::map)
+        .orElse(null);
+  }
+
 }

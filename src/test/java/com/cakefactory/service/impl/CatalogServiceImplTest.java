@@ -31,6 +31,7 @@ class CatalogServiceImplTest {
     entity.setTitle("Cake");
     entity.setPrice(new BigDecimal("100.00"));
     Pastry result = Pastry.builder()
+        .id("abc")
         .title("Cake")
         .price(new BigDecimal("100.00"))
         .build();
